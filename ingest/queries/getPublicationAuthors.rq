@@ -1,0 +1,19 @@
+PREFIX tw:    <http://tw.rpi.edu/schema/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?person (str(?label) as ?name) ?rank
+WHERE {
+  {publication} tw:hasAgentWithRole ?role .
+  ?person tw:hasRole ?role .
+  ?role tw:index ?rank .
+  ?person a foaf:Person .
+  ?person foaf:name ?label .
+} GROUP BY ?person ?label ?rank ORDER BY ?rank
+

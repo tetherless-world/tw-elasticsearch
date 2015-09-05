@@ -1,0 +1,2239 @@
+@prefix : <http://www.w3.org/1999/xhtml> .
+@prefix admin: <http://webns.net/mvcb/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix con: <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix daml: <http://www.daml.org/2001/03/daml+oil#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix html: <http://www.w3.org/1999/xhtml#> .
+@prefix ical: <http://www.w3.org/2002/12/cal/ical#> .
+@prefix j.0: <http://www.rpi.edu/~michaj6/foaf.rdf#> .
+@prefix j.1: <http://tw.rpi.edu/instances/> .
+@prefix j.2: <http://www.cs.rpi.edu/~hendler/foaf.rdf#> .
+@prefix j.3: <http://tw.rpi.edu/instances/person/> .
+@prefix li: <http://www.cs.rpi.edu/~dingl/foaf.rdf#> .
+@prefix media: <http://tw.rpi.edu/media/latest/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://www.perceive.net/schemas/relationship/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix skos: <http://www.w3.org/2008/05/skos#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix tw: <http://tw.rpi.edu/schema/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsp: <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+
+tw:ConferencePaper a rdfs:Class,
+        rdfs:Resource,
+        owl:Class ;
+    rdfs:label "Conference Paper"@en ;
+    rdfs:comment "A paper published in the proceedings of a conference"@en ;
+    rdfs:subClassOf tw:ProceedingPaper .
+
+tw:ProceedingPaper a rdfs:Class,
+        rdfs:Resource,
+        owl:Class ;
+    rdfs:label "Proceeding Paper"@en ;
+    rdfs:comment "A paper published in a conference proceedings"@en ;
+    rdfs:subClassOf tw:Publication .
+
+tw:Publication a rdfs:Class,
+        rdfs:Resource,
+        owl:Class ;
+    rdfs:label "Publication"@en ;
+    rdfs:comment "A formal publication of a work, usually research related (although not necessarily)"@en ;
+    rdfs:subClassOf foaf:Document .
+
+tw:TechnicalReport a rdfs:Class,
+        rdfs:Resource,
+        owl:Class ;
+    rdfs:label "Technical Report"@en ;
+    rdfs:comment "A report document prepared as part of a grant or proposal"@en ;
+    rdfs:subClassOf tw:Publication .
+
+foaf:Document a rdfs:Class,
+        rdfs:Resource .
+
+j.1:Deborah_L_McGuinness a foaf:Person ;
+    tw:hasAffiliation j.1:TetherlessWorldConstellation ;
+    tw:hasBio """
+\t<div lang="en" xmlns="http://www.w3.org/1999/xhtml">
+\t    Dr. Deborah McGuinness is a leading expert in knowledge
+\t    representation and reasoning languages and systems and has
+\t    worked in ontology creation and evolution environments for
+\t    over 20 years. Most recently, Deborah is best known for her
+\t    leadership role in semantic web research, and for her work
+\t    on explanation, trust, and applications of semantic web
+\t    technology, particularly for scientific applications.
+\t    Deborah is co-editor of the Ontology Web Language which has
+\t    emerged from web ontology working group of the World Wide
+\t    Web (W3C) semantic web activity  and has now achieved W3C
+\t    Recommendation status. She helped start the web ontology
+\t    working group out of work as a co-author of the DARPA Agent
+\t    Markup Language program\'s DAML language. She helped form the
+\t    Joint EU/US Agent Markup Language Committee which evolved
+\t    the DAML language into the oil-reference DAML OIL
+\t    description logic-based ontology language.  She is a
+\t    co-author of one of the more widely used long-lived
+\t    description logic systems (CLASSIC)  from Bell Laboratories.
+\t    Her work on languages (including OWL, oil-reference.html
+\t    DAML OIL, OIL, CLASSIC, etc.) is aimed at providing
+\t    languages that enable the next generation of web
+\t    applications moving from a web aimed at human consumption to
+\t    the semantic web aimed at machine consumption in support of
+\t    intelligent assistants and web agents. Deborah is a leader
+\t    in ontology-based tools and applications. She is a co-author
+\t    and technical leader of the Stanford KSL ontology evolution
+\t    environment. She also consulted to help VerticalNet design
+\t    and build its Ontobuilder/Ontoserver  ontology evolution
+\t    environment. She also provided technical leadership for the
+\t    Stanford project to help Cisco systems form its ontology
+\t    evolution plan for its meta data formation work.
+\t    <br/><br/>
+\t    Deborah\'s main research thrusts are in languages, tools, and
+\t    environments for the semantic web. Deborah leads the
+\t    Stanford Inference Web (IW) effort. IW provides a framework
+\t    for increasing trust in answers from heterogeneous systems
+\t    by explaining how the answers were derived and what they
+\t    depended on. Inference Web supports this goal by providing
+\t    infrastructure and an implemented web-based environment for
+\t    storing, exchanging, combining, annotating, comparing,
+\t    search for, validating, and rendering proofs and proof
+\t    fragments provided by reasoners and query answering systems.
+\t    Inference web is being used as an infrastructure for
+\t    explanations in a number of DARPA, DTO, and NSF projects and
+\t    in a few demonstration systems including the Explainable
+\t    Semantic Discovery Service and the KSL wine agent. Deborah
+\t    led the wine agent project as an early semantic web services
+\t    demonstration system that integrates explanation (via
+\t    Inference web), semantic web languages (via DAML OIL and
+\t    OWL), semantic web query languages (via OWL-QL), and web
+\t    services (via OWL-S).
+\t</div>
+    """^^rdf:XMLLiteral ;
+    tw:hasFaxNumber <fax:+1(518)276-4464> ;
+    tw:hasInterest j.1:HealthInformatics,
+        j.1:ProvenanceConcept,
+        j.1:SemanticWebConcept,
+        j.1:WebScienceConcept,
+        j.1:eScienceConcept,
+        <http://wineagent.tw.rpi.edu/data/wine.rdf#Wine> ;
+    tw:hasRole [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Semantic_Web_Rule_Languages_and_Explanation ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2009-01-01T09:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2009-05-31T11:50:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 9 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2011-01-17T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Configuration ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2014-02-10T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Toward_Establishing_Trust_in_Adaptive_Agents ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2010-09-01T00:00:00"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2013-05-28T00:00:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2010-08-30T13:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2010-12-06T15:50:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:Matching_in_Description_Logics-3A_Preliminary_Results ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:Reasoning_with_Black_Boxes-3A_Handling_Test_Concepts_in_CLASSIC ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 9 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Advisor,
+                tw:PrimaryAdvisor,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2006-09-01T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 7 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 12 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Inference_Web-3A_Portable_and_Sharable_Explanations_for_Question_Answering ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:Towards_Social_Webtops_Using_Semantic_Wiki ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Towards_Identity_in_Linked_Data ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Trusting_Answers_from_Web_Applications ],
+        [ a tw:CoInvestigator,
+                tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2007-01-01T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2008-08-25T13:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2008-12-01T15:50:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2011-01-25T09:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2011-05-10T11:50:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 29 ;
+            tw:ofDocument media:IAAI09-031_Zhang-et-al.pdf ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2012-01-01T09:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2012-05-31T11:50:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Knowledge_Representation-2C_Connectionism-2C_and_Conceptual_Retrieval ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 12 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:The_CLASSIC_Knowledge_Representation_System-3A_Implementation-2C_Applications-2C_and_Beyond ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:ofDocument j.1:Semantically_Enabled_Temporal_Reasoning_in_a_Virtual_Observatory ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Selective_Privacy_in_a_Web-2Dbased_World-3A_Challenges_of_Representing_and_Inferring_Context ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:CoInvestigator,
+                tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2010-10-01T00:00:01"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Explaining_Subsumption_in_Description_Logics ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 11 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 8 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:CoInvestigator,
+                tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2009-01-01T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 13 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        _:N5acf67d18dcc4eaab0033710eebdba15,
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2013-06-01T00:00:00-04:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2999-12-31T23:59:59-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Towards_Leveraging_Inference_Web_to_Support_Intuitive_Explanations_in_Recommender_Systems_for_Automated_Career_Counseling ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1395981173_508590 ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2009-09-01T00:00:00"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2010-01-01T00:00:00"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2011-08-29T13:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2011-12-12T15:50:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2015-01-01T00:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2015-09-01T23:59:59-05:00"^^xsd:dateTime ] ] ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:CoInvestigator,
+                tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2007-01-01T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2007-01-01T00:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2011-12-31T23:59:59-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1440647845_670362 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Towards_Explaining_Semantic_Matching ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 15 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 12 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2010-01-25T09:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2010-05-10T11:50:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2014-11-01T00:00:00-04:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2019-08-01T23:59:59-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2006-09-01T00:00:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Usability_Issues_in_Knowledge_Representation_Systems ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Digital_Libraries_and_Web-2Dbased_Information_Systems ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        _:N854079e66e7c474f86db6a99b96b5180,
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:CoInvestigator,
+                tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2009-01-01T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Usability_Issues_in_DL_Systems ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Knowledge_Provenance_in_Virtual_Observatories-3A_Application_to_Image_Data_Pipelines ],
+        [ a tw:CoInvestigator,
+                tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2010-10-01T00:00:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 8 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 29 ;
+            tw:ofDocument media:GILA-TIST-Journal.pdf ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Knowledge_Representation_for_Question_Answering ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 7 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument <http://tw.rpi.edu/instances/The_TW_Wine_Agent-3A_A_Social_Semantic_Web_Demo_(TW_Grand_Opening)> ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument media:Towards_the_Explanation_of_Workflows ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 8 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Infrastructure_for_Web_Explanations ],
+        [ a tw:Collaborator,
+                tw:ProjectCollaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2008-10-01T08:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2013-03-06T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:The_CLASSIC_Knowledge_Representation_System_or-2C_KL-2DONE-3A_The_Next_Generation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2011-02-18T00:00:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2012-01-01T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2011-08-01T00:00:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:CoInvestigator,
+                tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2012-02-15T00:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2015-02-14T23:59:59-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Editor,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:Description_Logic_Handbook ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:ofDocument j.1:The_General_Motors_Variation-2DReduction_Adviser-3A_Deployment_Issues_for_an_AI_Application ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 7 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument <http://wineagent.tw.rpi.edu/papers/iswc-2009-wineagentdemo.pdf> ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2013-06-24T00:00:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Ontologies_for_Electronic_Commerce ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 7 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Ontology-2Denhanced_Search_for_Primary_Care_Medical_Literature ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 9 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Editor,
+                tw:Role ;
+            tw:index 4 ;
+            tw:ofDocument <http://www.iospress.nl/book/the-emerging-semantic-web/> ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Knowledge_Provenance_for_Virtual_Observatories ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2009-08-30T13:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2009-12-06T15:50:00-04:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 8 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:McGuinnessAssociates ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2007-01-01T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:ofDocument j.1:Encoding_extraction_as_inferences ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Description_Logics_Emerge_from_Ivory_Towers ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2012-07-01T00:00:00-04:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 7 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Collaborator,
+                tw:PrincipalInvestigator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2015-01-26T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Faculty,
+                tw:FullProfessor,
+                tw:Occupation,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instance ;
+                            time:inXSDDateTime "2008-01-01T23:32:24"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Editor,
+                tw:Role ;
+            tw:index 1 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ] ;
+    tw:middleInitial "L" ;
+    tw:page <http://tw.rpi.edu/web/person/Deborah_L_McGuinness> ;
+    foaf:account [ a foaf:OnlineAccount ;
+            foaf:accountName "dlm" ] ;
+    foaf:depiction <http://tw.rpi.edu/img_avtrs/DLM-cropped.gif> ;
+    foaf:firstName "Deborah"@en ;
+    foaf:lastName "McGuinness"@en ;
+    foaf:name "Deborah L. McGuinness"@en ;
+    foaf:title "Dr." .
+
+j.1:Nicholas_Del_Rio a foaf:Person ;
+    tw:hasRole _:N1987ad71bc13410c9572a34243557484,
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 8 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 7 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:UTEP ] ;
+    tw:page <http://tw.rpi.edu/web/person/Collaborator?uri=http://tw.rpi.edu/instances/Nicholas_Del_Rio> ;
+    foaf:firstName "Nicholas" ;
+    foaf:lastName "Rio" ;
+    foaf:name "Nicholas Del Rio" .
+
+j.1:Paulo_Pinheiro_da_Silva a foaf:Person ;
+    tw:hasBio """
+\t<div lang="en" xmlns="http://www.w3.org/1999/xhtml">
+I am the leader of the <a href="http://trust.utep.edu">Trust Laboratory</a> at <a href="http://www.utep.edu">The University of Texas at El Paso (UTEP)</a>, a member of <a href="http://research.utep.edu/Default.aspx?tabid=14636">The Software Engineering Affinity Laboratory</a>, and a member of <a href="http://cybershare.utep.edu/">UTEP\'s Cyber-ShARE Center of Excellence for Sharing Resources Through Cyber-Infrastructure</a> to advance science, engineering, and education. Cyber-ShARE is a <a href="http://www.nsf.gov">National Science Foundation (NSF)</a>-funded multi-disciplinary research effort between computer science, geosciences, environmental sciences, computational math, astronomy, and education.
+<br/><br/>
+At Cyber-ShARE, I am the leader of the computer science component that aims to increase the scientist use of <a href="http://www.w3.org/2001/sw/">semantic web</a> and social network technologies in support of cyber-infrastructure-based, data-intensive applications and services. In particular, the center aims to provide scientists with information that will enable them to make informed decisions about retrieved resources and to have confidence in using resources derived through complex scientific processes.
+<br/><br/>
+I am a co-leader of <a href="http://inference-web.org">the Inference Web (IW)</a> project, a collaborative research effort between UTEP, <a href="http://www.stanford.edu">Stanford University</a>, and <a href="http://www.rpi.edu">Rensselaer Polytechnic Institute</a>. The IW project aims to provide infrastructure for explaining answers from software systems. Inference Web has been sponsored by a number of DARPA, NSF, DHS and DTO (formerly known as ARDA) projects.
+<br/><br/>
+Prior to joining UTEP, I was a postdoctoral fellow in <a href="http://ksl.stanford.edu">the Knowledge Systems, AI Laboratory</a> at Stanford University. I am a former member of <a href="http://img.cs.man.ac.uk">the Information Management Group</a> at <a href="http://www.cs.man.ac.uk">the School of Computer Science</a> of <a href="http://www.manchester.ac.uk">the University of Manchester</a>, United Kingdom, a leading research group on Semantic Web, Grid and e-Science solutions in Europe. I am also a former member of <a href="http://www.lbd.dcc.ufmg.br/">the Database Group</a> at <a href="http://www.ufmg.br/english">the Universidade Federal de Minas Gerais (UFMG)</a>, Brazil, a leading research group on information extraction and information retrieve in Latin America.
+\t</div>
+    """^^rdf:XMLLiteral ;
+    tw:hasRole [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:UTEP ],
+        _:N1d551afdc8504dfc8b3864f02d36aa80,
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Encoding_extraction_as_inferences ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:CoInvestigator,
+                tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2014-02-10T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Trusting_Answers_from_Web_Applications ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:ofDocument j.1:Towards_Explaining_Semantic_Matching ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:Organization_1347553706_677341 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Inference_Web-3A_Portable_and_Sharable_Explanations_for_Question_Answering ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Infrastructure_for_Web_Explanations ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Occupation,
+                tw:ResearchScientist,
+                tw:Researcher,
+                tw:Role,
+                tw:Staff ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instance ;
+                            time:inXSDDateTime "2014-02-01T12:00:00"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:UTEP ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:Knowledge_Provenance_in_Virtual_Observatories-3A_Application_to_Image_Data_Pipelines ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:UTEP ] ;
+    tw:page <http://tw.rpi.edu/web/person/PauloPinheiro> ;
+    foaf:account [ a foaf:OnlineAccount ;
+            foaf:accountName "paulopinheiro" ] ;
+    foaf:depiction media:PauloPinheirodaSilva.jpg ;
+    foaf:firstName "Paulo" ;
+    foaf:lastName "Pinheiro" ;
+    foaf:name "Paulo Pinheiro" .
+
+li:me a foaf:Person ;
+    rdfs:label "Li Ding"@en ;
+    dct:source <http://www.cs.rpi.edu/~dingl/> ;
+    tw:hasBio """
+Li Ding is a research scientist in the Tetherless World Constellation at Rensselaer Polytechnic Institute (RPI). As an early adopter of the Semantic Web (since 2000), his research interest covers many practical aspects of the Semantic Web, such as semantic search, user interaction, web-scale computing, ontology, provenance, privacy and trust, information integration, and social computing. He is also known as the founder of Swoogle, one of the first semantic web search engine on the Web. He is an active researcher in Semantic Web community and has served as organizer and program committee member for major conferences such as WWW, ISWC, CIKM, AAMAS, and many other international workshops. He is a former Kodak postdoctoral fellow in the Knowledge Systems, Artificial Intelligence Laboratory (KSL) at Stanford University. He received Ph.D. in computer science from University of Maryland Baltimore County. Prior to that, he received B.S. and M.S. in computer science from Peking University.
+    """@en ;
+    tw:hasRole [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Enhancing_Web_Privacy_Protection_through_Declarative_Policies ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:Organization_1311022796_540537 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:Organization_1311022796_540537 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:ofDocument j.1:Integrating_ecoinformatics_resources_on_the_semantic_web ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:Organization_1311022796_540537 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Knowledge_Representation_and_Query_in_Semantic_MediaWiki-3A_A_Formal_Study ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1311022796_540537 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Role,
+                tw:Student,
+                tw:TeachingAssistant ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2008-08-28T16:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2008-12-04T18:50:00-04:00"^^xsd:dateTime ] ] ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument <http://tw.rpi.edu/instances/The_TW_Wine_Agent-3A_A_Social_Semantic_Web_Demo_(TW_Grand_Opening)> ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Towards_Social_Webtops_Using_Semantic_Wiki ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument <http://tw.rpi.edu/instances/Semantic_Web_Archive_(Poster)> ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:TAGA-3A_Travel_Market_Framework_in_Agentcities ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Fast_Sequential_Cell_Noise_Immunity_Characterization_Using_Meta-2Dstable_Point_of_Feedback_Loop ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:Organization_1360632578_498732 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Alumni,
+                tw:Role ;
+            dct:creator j.1:PatrickWest ;
+            dct:issued "2011-08-23"^^xsd:dateTime ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2011-08-19T00:00:01"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 14 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Research_on_Cost-2DSensitive_Learning_in_One-2DClass_Anomaly_Detection_Algorithms ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Investigation_on_Ergonomics_Characteristics_of_Protective_Clothing_Based_on_Capture_of_Three-2DDimensional_Body_Movements ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:ofDocument <http://tw.rpi.edu/instances/Analyzing_the_AIR_Language-3A_A_Semantic_Web_(Production)_Rules_Language> ],
+        [ a tw:Occupation,
+                tw:PostDoc,
+                tw:ResearchScientist,
+                tw:Researcher,
+                tw:Role,
+                tw:Staff ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2007-08-01T00:00:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2011-08-19T00:00:00"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:RPI_Map_on_Semantic_Wiki ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:Using_semantic_web_technology_in_multi-2Dagent_systems-3A_a_case_study_in_the_TAGA_trading_agent_environment ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:ofDocument j.1:Semantic_analytics_on_social_networks-3A_experiences_in_addressing_the_problem_of_conflict_of_interest_detection ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:ofDocument j.1:Selective_Privacy_in_a_Web-2Dbased_World-3A_Challenges_of_Representing_and_Inferring_Context ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Swoogle-3A_Searching_for_Knowledge_on_the_Semantic_Web ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Trust_Based_Knowledge_Outsourcing_for_Semantic_Web_Agents ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:ofDocument media:GILA-TIST-Journal.pdf ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Information_and_Technology_Application_and_Practice_in_Campus_Library ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:How_the_Semantic_Web_is_Being_Used-3A_An_Analysis_of_FOAF_Documents ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 4 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:Organization_1310929468_248515 ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:TBNM_-2D_Transistor-2DLevel_Boundary_Model_for_Fast_Gate-2DLevel_Noise_Analysis_of_Macro_Blocks ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:ofDocument j.1:Finding_and_Ranking_Knowledge_on_the_Semantic_Web ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 5 ;
+            tw:ofDocument media:IAAI09-031_Zhang-et-al.pdf ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument j.1:Digital_Library_Construction_Information_Technology_Application_and_Practice_in_Campus_Library ],
+        [ a tw:Collaborator,
+                tw:ProjectCollaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2007-01-01T00:00:00-05:00"^^xsd:dateTime ] ;
+                    time:hasEnd [ a time:Instant ;
+                            time:inXSDDateTime "2011-12-31T23:59:59-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Collaborator,
+                tw:ProjectCollaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2007-01-01T00:00:00-05:00"^^xsd:dateTime ] ] ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 6 ;
+            tw:withAffiliation j.1:RPIOrganization ],
+        _:Nfb8aca0720b04837be0f44193aced378,
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 1 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 3 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 2 ;
+            tw:ofDocument media:Towards_the_Explanation_of_Workflows ],
+        [ a tw:Author,
+                tw:Role ;
+            tw:index 13 ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ] ;
+    tw:page <http://tw.rpi.edu/web/person/LiDing> ;
+    rdfs:comment "Li Ding"@en ;
+    foaf:account [ a foaf:OnlineAccount ;
+            foaf:accountName "dingl" ] ;
+    foaf:depiction <http://tw.rpi.edu/img_avtrs/LiDing_AVTR.jpg> ;
+    foaf:firstName "Li"@en ;
+    foaf:lastName "Ding"@en ;
+    foaf:mbox <mailto:dingl@cs.rpi.edu> ;
+    foaf:name "Li Ding"@en .
+
+<http://tw.rpi.edu/instances/ISWC/2008> a tw:Conference,
+        tw:Event,
+        tw:ISWC,
+        ical:Vevent ;
+    rdfs:label "ISWC 2008"@en ;
+    dct:description """<div xmlns="http://www.w3.org/1999/xhtml">
+    7th International Semantic Web Conference
+    <br/><br/>
+    The Web continues to grow and new technologies, modes of
+    interactions, and applications are being developed. Building on this
+    growth, Semantic Web technologies aim at providing a shared semantic
+    information space, changing qualitatively our experiences on the
+    Web. As Semantic Web technologies mature and permeate more and more
+    application areas, new research challenges are coming to the fore
+    and some unsolved ones are becoming more acute. These issues include
+    creating and managing Semantic Web content, making Semantic Web
+    applications robust and scalable, organizing and integrating
+    information from different sources for novel uses, making semantics
+    explicit in order to improve our overall experience with information
+    technologies, and thus enabling us to use the wealth of information
+    that is currently available in digital form for addressing our
+    everyday tasks. To foster the exchange of ideas and collaboration,
+    ISWC brings together researchers in relevant disciplines such as
+    artificial intelligence, databases, social networks, distributed
+    computing, web engineering, information systems, natural language
+    processing, soft computing, and human-computer interaction.
+    <br/><br/>
+    ISWC 2008 calls for papers to its research track. The research track
+    solicits the submission of original, principled research papers
+    dealing with both analytical theoretical and practical aspects of
+    Semantic Web research. Papers of the latter type are encouraged to
+    present repeatability of their experiments, and share with the
+    community their data and test harnesses. 
+  </div>"""^^rdf:XMLLiteral ;
+    dct:source <http://semanticweb.org/wiki/ISWC2008> ;
+    tw:hasDateTimeCoverage [ a time:Interval ;
+            time:hasBeginning [ a time:Instant ;
+                    time:inXSDDateTime "2008-10-26T08:00:00"^^xsd:dateTime ] ;
+            time:hasEnd [ a time:Instant ;
+                    time:inXSDDateTime "2008-10-30T17:00:00"^^xsd:dateTime ] ] ;
+    tw:hasLocation [ rdfs:label "Karlsruhe, Germany"^^xsd:string ] ;
+    tw:page <http://tw.rpi.edu/web/event/ISWC/2008> ;
+    foaf:name "ISWC 2008"@en .
+
+j.1:InferenceWebProject a foaf:Project ;
+    dct:description """
+\t<div lang="en" xmlns="http://www.w3.org/1999/xhtml">
+\t    The Inference Web is a Semantic Web based knowledge
+\t    provenance infrastructure that supports interoperable
+\t    explanations of sources, assumptions, learned information,
+\t    and answers as an enabler for trust.
+\t    <ul>
+\t\t<li>Provenance - if users (humans and agents) are to use
+\t\tand integrate data from unknown, uncertain, or multiple
+\t\tsources, they need provenance metadata for evaluation</li>
+\t\t<li>Interoperability - more systems are using varied
+\t\tsources and multiple information manipulation engines,
+\t\tthus increasing interoperability requirements</li>
+\t\t<li>Explanation/Justification - if information has been
+\t\tmanipulated (i.e., by sound deduction or by heuristic
+\t\tprocesses), information manipulation trace information
+\t\tshould be available</li>
+\t\t<li>Trust - if some sources are more trustworthy than
+\t\tothers, trust ratings are desired </li>
+\t    </ul>
+\t    The Inference Web consists of two important components:
+\t    <ul>
+\t\t<li>
+\t\t    Proof Markup Language (PML) Ontology - Semantic Web
+\t\t    based representation for exchanging explanations
+\t\t    including
+\t\t    <ul>
+\t\t        <li>provenance information - annotating the
+\t\t\tsources of knowledge</li>
+\t\t        <li>justification information - annotating the
+\t\t\tsteps for deriving the conclusions or executing
+\t\t\tworkflows</li>
+\t\t        <li>trust information - annotating
+\t\t\ttrustworthiness assertions about knowledge and
+\t\t\tsources </li>
+\t\t    </ul>
+\t\t</li>
+\t\t<li>IW Toolkit - Web-based and standalone tools that
+\t\tfacilitate human users to browse, debug, explain, and
+\t\tabstract the knowledge encoded in PML. </li>
+\t    </ul>
+\t</div>
+    """^^rdf:XMLLiteral ;
+    dct:source <http://www.inference-web.org> ;
+    tw:hasAgentWithRole _:N5acf67d18dcc4eaab0033710eebdba15,
+        [ a tw:Collaborator,
+                tw:ProjectCollaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2007-01-01T00:00:00"^^xsd:dateTime ] ] ],
+        [ a tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2009-01-01T00:00:00"^^xsd:dateTime ] ] ],
+        [ a tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2009-01-01T00:00:00"^^xsd:dateTime ] ] ],
+        [ a tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2010-01-01T00:00:00"^^xsd:dateTime ] ] ;
+            tw:withAffiliation j.1:TetherlessWorldConstellation ],
+        [ a tw:Collaborator,
+                tw:Role ;
+            tw:hasDateTimeCoverage [ a time:Interval ;
+                    time:hasBeginning [ a time:Instant ;
+                            time:inXSDDateTime "2009-01-01T00:00:00"^^xsd:dateTime ] ] ] ;
+    tw:hasDateTimeCoverage [ a time:Interval ;
+            time:hasBeginning [ a time:Instant ;
+                    time:inXSDDateTime "2007-01-01T14:08:02"^^xsd:dateTime ] ] ;
+    tw:hasThemeReference j.1:KnowledgeProvenance ;
+    tw:hasTopic j.1:ProvenanceConcept ;
+    tw:page <http://tw.rpi.edu/web/project/InferenceWeb> ;
+    foaf:logo media:inference-web_noborder_sm.png ;
+    foaf:name "Inference Web"@en .
+
+media:Inference_Web_in_Action-3A_Lightweight_Use_of_Proof_Markup_Language.pdf a tw:ConferencePaper,
+        tw:ProceedingPaper,
+        tw:Publication,
+        tw:TechnicalReport,
+        foaf:Document,
+        "" ;
+    dct:title "Inference Web in Action: Lightweight Use of Proof Markup Language" ;
+    tw:hasAgentWithRole _:N1987ad71bc13410c9572a34243557484,
+        _:N1d551afdc8504dfc8b3864f02d36aa80,
+        _:N854079e66e7c474f86db6a99b96b5180,
+        _:Nfb8aca0720b04837be0f44193aced378 ;
+    tw:hasDate [ a time:Instant ;
+            time:inXSDDateTime "2008-01-01T00:00:00"^^xsd:dateTime ] ;
+    tw:hasProjectReference j.1:InferenceWebProject ;
+    tw:inEvent <http://tw.rpi.edu/instances/ISWC/2008> ;
+    tw:page <http://tw.rpi.edu/web/doc/Inference_Web_in_Action-3A_Lightweight_Use_of_Proof_Markup_Language> ;
+    foaf:name "Inference Web in Action: Lightweight Use of Proof Markup Language" .
+
+_:N697af06d7ff64cb38295bdbcdb42f23c a time:Instant ;
+    time:inXSDDateTime "2006-01-02T23:25:04"^^xsd:dateTime .
+
+_:Nfe046de120e54f74bd1accc51667e0c4 a time:Interval ;
+    time:hasBeginning _:N697af06d7ff64cb38295bdbcdb42f23c .
+
+_:N1987ad71bc13410c9572a34243557484 a tw:Author,
+        tw:Role ;
+    tw:index 4 ;
+    tw:ofDocument media:Inference_Web_in_Action-3A_Lightweight_Use_of_Proof_Markup_Language.pdf .
+
+_:N1d551afdc8504dfc8b3864f02d36aa80 a tw:Author,
+        tw:Role ;
+    tw:index 1 ;
+    tw:ofDocument media:Inference_Web_in_Action-3A_Lightweight_Use_of_Proof_Markup_Language.pdf .
+
+_:N5acf67d18dcc4eaab0033710eebdba15 a tw:Collaborator,
+        tw:PrincipalInvestigator,
+        tw:Role ;
+    tw:hasDateTimeCoverage _:Nfe046de120e54f74bd1accc51667e0c4 ;
+    tw:withAffiliation j.1:TetherlessWorldConstellation .
+
+_:N854079e66e7c474f86db6a99b96b5180 a tw:Author,
+        tw:Role ;
+    tw:index 2 ;
+    tw:ofDocument media:Inference_Web_in_Action-3A_Lightweight_Use_of_Proof_Markup_Language.pdf .
+
+_:Nfb8aca0720b04837be0f44193aced378 a tw:Author,
+        tw:Role ;
+    tw:index 3 ;
+    tw:ofDocument media:Inference_Web_in_Action-3A_Lightweight_Use_of_Proof_Markup_Language.pdf .
+
+
