@@ -23,6 +23,7 @@ FOAF = Namespace("http://xmlns.com/foaf/0.1/")
 TW = Namespace("http://tw.rpi.edu/schema/")
 SKOS = Namespace("http://www.w3.org/2008/05/skos#")
 DCT = Namespace("http://purl.org/dc/terms/")
+TIME = Namespace("http://www.w3.org/2006/time#")
 
 
 def get_metadata(id):
@@ -99,6 +100,14 @@ def create_publication_doc(publication, endpoint):
     elif event:
         print("event missing label:", str(event.identifier))
 
+    dt = list(pub.objects(TW.hasDate))
+    if dt:
+        instant = dt[0]
+        x = list(instant.objects(TIME.inXSDDateTime))
+        if x:
+            yr = x[0][:4]
+            doc.update({"publicationYear": yr})
+
     venue = list(pub.objects(TW.inPublication))
     venue = venue[0] if venue else None
     if venue and venue.value(DCT.title):
@@ -134,7 +143,7 @@ def create_publication_doc(publication, endpoint):
         themes.append(t)
 
     if themes:
-        doc.update({"researchArea": projects})
+        doc.update({"researchArea": themes})
 
     people = list(graph.subjects(RDF.type, FOAF.Person))
     authors = []
@@ -146,6 +155,24 @@ def create_publication_doc(publication, endpoint):
             for r in roles:
                 if r == authorship:
                     name = person.value(FOAF.name)
+                    if not name:
+                        name = person.label()
+                        if not name:
+                            first = person.value(URIRef("http://xmlns.com/foaf/0.1/firstName"))
+                            if not first:
+                                first = person.value(URIRef("http://xmlns.com/foaf/0.1/givenName"))
+                            last = person.value(URIRef("http://xmlns.com/foaf/0.1/lastName"))
+                            if not last:
+                                last = person.value(URIRef("http://xmlns.com/foaf/0.1/familyName"))
+                            if first and last:
+                                name = first + " " + last
+                            elif first:
+                                name = first
+                            elif last:
+                                name = last
+                            else:
+                                name = "John Doe"
+                            print( "name = ", name )
                     ri = r.identifier
                     for s, p, o in graph.triples((ri, URIRef("http://tw.rpi.edu/schema/index"), None)):
                         rank = o

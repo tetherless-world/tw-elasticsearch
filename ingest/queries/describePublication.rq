@@ -7,7 +7,7 @@ PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-DESCRIBE ?publication ?mostSpecificType ?topic ?research ?role ?author ?pub ?project ?publisher ?event
+DESCRIBE ?publication ?mostSpecificType ?topic ?research ?role ?author ?pub ?project ?publisher ?event ?date
 WHERE {
   ?publication a ?mostSpecificType .
   ?publication tw:hasAgentWithRole ?role .
@@ -19,4 +19,5 @@ WHERE {
   OPTIONAL { ?publication tw:hasProjectReference ?project }
   OPTIONAL { ?publication dct:publisher ?publisher }
   OPTIONAL { ?publication tw:inEvent ?event }
+  OPTIONAL { ?publication tw:hasDate ?date }
 }

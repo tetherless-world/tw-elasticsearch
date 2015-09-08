@@ -156,6 +156,9 @@
           }
         }
       },
+      "publicationYear":{
+        "type":"long"
+      },
       "page":{
         "type":"string",
         "index": "not_analyzed"
