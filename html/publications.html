@@ -49,6 +49,38 @@
 
                     var html = "<tr><td>";
                     
+                    // last, fi, last, fi.mi year. title. In journal at event (event start date-end date,
+                    // location)
+
+                    // for each author use str.split(" "), take last element of array for last name. Then
+                    // take first initial of the others a.b.c
+                    if (record["authors"]) {
+                        html += "<br /><span><small>";
+                        for (var i = 0; i < record["authors"].length; i++) {
+                            var autharr = record["authors"][i]["name"].split( " " ) ;
+                            var authlen = autharr.length ;
+                            var lastname = autharr[authlen-1] ;
+                            var initials = "" ;
+                            if (authlen > 1 ) {
+                                for (var a = 0; a < authlen-1; a++ ) {
+                                    initials += autharr[a][0] + "." ;
+                                }
+                                initials += ", " ;
+                            }
+                            html += "<a href=\"" + record["authors"][i]["uri"] + "\" target=\"_blank\">" + lastname + ", " + initials + "</a>";
+                        }
+                        html += "</small></span>";
+                    }
+
+                    // add the publication year
+                    if (record["publicationYear"]) {
+                        html += "<span><small> " + record["publicationYear"] + ". </small></span>";
+                    }
+
+
+
+                    // Will need to put in location and dates for an event
+
                     uri = record["uri"];
                     page = record["page"];
                     title = record["title"];
@@ -131,10 +163,6 @@
                             }
                         }
                         html += "</small></span>";
-                    }
-
-                    if (record["publicationYear"]) {
-                        html += "<br /><span><small>Publication Year: " + record["publicationYear"] + "</small></span>";
                     }
 
                     html += "</td></tr>";
