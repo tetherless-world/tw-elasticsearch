@@ -19,7 +19,7 @@
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $('.facet-view-simple').facetview({
-                search_url: '//localhost:9200/tw/publication/_search',
+                search_url: '//tw.rpi.edu/es/tw/publication/_search',
                 page_size: 20,
                 sort: [{"_score" : {"order" : "desc"}}],
                 sharesave_link: true,
@@ -48,6 +48,25 @@
                 {
 
                     var html = "<tr><td>";
+
+                    uri = record["uri"];
+                    page = record["page"];
+                    title = record["title"];
+                    var n = uri.lastIndexOf(".");
+                    var img = "";
+                    if( n != -1 )
+                    {
+                        var ext = uri.substr(n);
+                        if( ext == ".pdf" ) img = "pdf.png" ;
+                        else if( ext == ".docx" ) img = "docx.png" ;
+                        else if( ext == ".pptx" ) img = "pptx.png" ;
+                        else img = "download.jpg" ;
+
+                    }
+                    if( img != "download.jpg" ) {
+                        html += "&nbsp;<a href=\"" + uri + "\" target=\"_new\"><img src=\"/tw-es/images/" + img + "\" style=\"float:left;margin-right:5px;width:20px;\"/></a>";
+                    }
+
                     
                     // last, fi, last, fi.mi year. title. In journal at event (event start date-end date,
                     // location)
@@ -81,26 +100,7 @@
 
                     // Will need to put in location and dates for an event
 
-                    uri = record["uri"];
-                    page = record["page"];
-                    title = record["title"];
                     html += "<strong><a href=\"" + page + "\">" + title + "</a></strong>";
-                    // FIXME: need to get an image of pdf, pptx, docx
-                    var n = uri.lastIndexOf(".");
-                    var img = "";
-                    if( n != -1 )
-                    {
-                        var ext = uri.substr(n);
-                        if( ext == ".pdf" ) img = "pdf.png" ;
-                        else if( ext == ".docx" ) img = "docx.png" ;
-                        else if( ext == ".pptx" ) img = "pptx.png" ;
-                        else img = "download.jpg" ;
-
-                    }
-                    if( img != "download.jpg" ) {
-                        html += "&nbsp;<a href=\"" + uri + "\"><img src=\"http://localhost/~westp/tw/images/" + img + "\" style=\"width:30px;\"/></a>";
-                    }
-
                     if (record["authors"]) {
                         html += "<br /><span><small>Authors: ";
                         for (var i = 0; i < record["authors"].length; i++) {
