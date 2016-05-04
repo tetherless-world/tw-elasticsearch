@@ -9,11 +9,12 @@ import argparse
 import requests
 import warnings
 import pprint
+import urllib
 
 
 def load_file(filepath):
-    with open(filepath) as _file:
-        return _file.read().replace('\n', " ")
+    _file = open(filepath)
+    return _file.read().replace('\n', " ")
 
 
 get_publications_query = load_file("queries/listPublications.rq")
@@ -84,17 +85,23 @@ def create_publication_doc(publication, endpoint):
     doc = {"uri": publication, "title": title}
 
     abstract = pub.value(TW.hasAbstract)
-    abstract = abstract if abstract else None
+    if abstract: abstract = abstract
+    else: abstract = None
+    # abstract = abstract ? abstract : None
     if abstract:
         doc.update({"abstract": abstract})
 
     page = list(pub.objects(TW.page))
-    page = str(page[0].identifier) if page else None
+    if page: page = str(page[0].identifier)
+    else: page = None
+    #page = str(page[0].identifier) if page else None
     if page:
-        doc.update({"page": page})
+        doc.update({"page": urllib.parse.quote_plus(page)})
 
     event = list(pub.objects(TW.inEvent))
-    event = event[0] if event else None
+    if event: event = event[0]
+    else: event = None
+    #event = event[0] if event else None
     if event and event.value(FOAF.name):
         doc.update({"presentedAt": {"uri": str(event.identifier), "name": event.value(FOAF.name)}})
     elif event:
@@ -109,7 +116,9 @@ def create_publication_doc(publication, endpoint):
             doc.update({"publicationYear": yr})
 
     venue = list(pub.objects(TW.inPublication))
-    venue = venue[0] if venue else None
+    if venue: venue = venue[0]
+    else: venue = None
+    #venue = venue[0] if venue else None
     if venue and venue.value(DCT.title):
         doc.update({"publishedIn": {"uri": str(venue.identifier), "name": venue.value(DCT.title)}})
     elif venue:
@@ -180,7 +189,8 @@ def create_publication_doc(publication, endpoint):
                     authors.append(obj)
 
     try:
-        authors = sorted(authors, key=lambda a: a["rank"]) if len(authors) > 1 else authors
+        if len(authors) > 1: authors = sorted(authors, key=lambda a: a["rank"])
+        #authors = sorted(authors, key=lambda a: a["rank"]) if len(authors) > 1 else authors
     except KeyError:
         print("missing rank for one or more authors of:", publication)
 
@@ -212,7 +222,9 @@ def publish(bulk, endpoint, rebuild, mapping):
     # push current publication document mapping
 
     mapping_url = endpoint + "/dco/publication/_mapping"
-    with open(mapping) as mapping_file:
+    #with open(mapping) as mapping_file:
+    mapping_file = open(mapping)
+    if mapping_file:
         r = requests.put(mapping_url, data=mapping_file)
         if r.status_code != requests.codes.ok:
 
@@ -242,8 +254,8 @@ def generate(threads, sparql):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--threads', default=8, help='number of threads to use (default = 8)')
-    parser.add_argument('--es', default="http://data.deepcarbon.net/es", help="elasticsearch service URL")
+    parser.add_argument('--threads', default=4, help='number of threads to use (default = 8)')
+    parser.add_argument('--es', default="http://localhost:9200", help="elasticsearch service URL")
     parser.add_argument('--publish', default=False, action="store_true", help="publish to elasticsearch?")
     parser.add_argument('--rebuild', default=False, action="store_true", help="rebuild elasticsearch index?")
     parser.add_argument('--mapping', default="mappings/publication.json", help="publication elasticsearch mapping document")
@@ -256,7 +268,9 @@ if __name__ == "__main__":
     records = generate(threads=int(args.threads), sparql=args.sparql)
 
     # save generated bulk import file so it can be backed up or reviewed if there are publish errors
-    with open(args.out, "w") as bulk_file:
+    #with open(args.out, "w") as bulk_file:
+    bulk_file = open(args.out, "w")
+    if bulk_file:
         bulk_file.write('\n'.join(records))
 
     # publish the results to elasticsearch if "--publish" was specified on the command line
